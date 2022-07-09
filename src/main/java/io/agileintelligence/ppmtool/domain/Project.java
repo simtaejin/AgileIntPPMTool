@@ -15,20 +15,23 @@ public class Project {
     private Long id;
     @NotBlank(message = "Project name is required")
     private String projectName;
-    @NotBlank(message = "Project Identifier is required")
+    @NotBlank(message ="Project Identifier is required")
     @Size(min=4, max=5, message = "Please use 4 to 5 characters")
     @Column(updatable = false, unique = true)
     private String projectIdentifier;
     @NotBlank(message = "Project description is required")
     private String description;
     @JsonFormat(pattern = "yyyy-mm-dd")
-    private Date string_date;
+    private Date start_date;
     @JsonFormat(pattern = "yyyy-mm-dd")
     private Date end_date;
     @JsonFormat(pattern = "yyyy-mm-dd")
     private Date created_At;
     @JsonFormat(pattern = "yyyy-mm-dd")
     private Date updated_At;
+
+    public Project() {
+    }
 
     public Long getId() {
         return id;
@@ -62,12 +65,12 @@ public class Project {
         this.description = description;
     }
 
-    public Date getString_date() {
-        return string_date;
+    public Date getStart_date() {
+        return start_date;
     }
 
-    public void setString_date(Date string_date) {
-        this.string_date = string_date;
+    public void setStart_date(Date start_date) {
+        this.start_date = start_date;
     }
 
     public Date getEnd_date() {
@@ -94,18 +97,13 @@ public class Project {
         this.updated_At = updated_At;
     }
 
-    public Project() {
-
-    }
-
-
     @PrePersist
-    protected void onCreate() {
+    protected void onCreate(){
         this.created_At = new Date();
     }
 
     @PreUpdate
-    protected void onUpdate() {
+    protected void onUpdate(){
         this.updated_At = new Date();
     }
 
