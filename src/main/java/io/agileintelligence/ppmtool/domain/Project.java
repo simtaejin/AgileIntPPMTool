@@ -12,15 +12,11 @@ public class Project {
     private Long id;
     private String projectName;
     private String projectIdentifier;
-    private String descrption;
+    private String description;
     private Date string_date;
     private Date end_date;
     private Date created_At;
     private Date updated_At;
-
-    public Project() {
-
-    }
 
     public Long getId() {
         return id;
@@ -46,12 +42,12 @@ public class Project {
         this.projectIdentifier = projectIdentifier;
     }
 
-    public String getDescrption() {
-        return descrption;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDescrption(String descrption) {
-        this.descrption = descrption;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public Date getString_date() {
@@ -85,6 +81,11 @@ public class Project {
     public void setUpdated_At(Date updated_At) {
         this.updated_At = updated_At;
     }
+
+    public Project() {
+
+    }
+
 
     @PrePersist
     protected void onCreate() {
