@@ -25,14 +25,14 @@ public class UserController {
     private UserService userService;
 
     @PostMapping("/register")
-    public ResponseEntity<?> registerUser(@Valid @RequestBody User user, BindingResult result) {
+    public ResponseEntity<?> registerUser(@Valid @RequestBody User user, BindingResult result){
+        // Validate passwords match
 
-        ResponseEntity<?> errMap = mapValidationErrorService.MapValidationService(result);
-
-        if (errMap != null) return errMap;
+        ResponseEntity<?> errorMap = mapValidationErrorService.MapValidationService(result);
+        if(errorMap != null)return errorMap;
 
         User newUser = userService.saveUser(user);
 
-        return new ResponseEntity<User>(newUser, HttpStatus.CREATED);
+        return  new ResponseEntity<User>(newUser, HttpStatus.CREATED);
     }
 }
