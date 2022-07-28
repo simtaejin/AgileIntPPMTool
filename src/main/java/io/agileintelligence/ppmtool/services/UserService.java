@@ -16,6 +16,7 @@ public class UserService {
     @Autowired
     private BCryptPasswordEncoder bCryptPasswordEncoder;
 
+
     public User saveUser (User newUser) {
 
         try {

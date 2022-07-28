@@ -2,7 +2,7 @@ package io.agileintelligence.ppmtool.security;
 
 public class SecurityConstants {
 
-    public static final String SING_UP_URLS = "/api/users/**";
+    public static final String SIGN_UP_URLS = "/api/users/**";
     public static final String H2_URL = "h2-console/**";
     public static final String SECRET = "SecretKeyToGenJWTs";
     public static final String TOKEN_PREFIX = "Bearer ";
